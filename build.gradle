@@ -1,0 +1,34 @@
+group 'com.taptech.ttis.utils'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+ext{
+    camelVersion = "2.16.2"
+}
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.3'
+    compile('com.mashape.unirest:unirest-java:1.4.7')
+    compile('org.mongodb:bson:3.0.4')
+    compile("org.apache.camel:camel-core:${camelVersion}")
+    compile("org.apache.camel:camel-spring-boot:${camelVersion}")
+    compile("org.apache.camel:camel-mvel:${camelVersion}")
+    //compile("org.apache.camel:camel-rabbitmq:${camelVersion}")
+    compile("org.apache.camel:camel-http4:${camelVersion}")
+    compile(group:'org.eclipse.jetty', name:'jetty-server', version:'9.3.9.v20160517')
+    compile(group:'org.eclipse.jetty', name:'jetty-http', version:'9.3.9.v20160517')
+    compile(group:'org.eclipse.jetty', name:'jetty-servlets', version:'9.3.9.v20160517')
+    compile group:'org.apache.tomcat', name: 'tomcat-servlet-api', version: '8.0.18'
+    compile 'commons-io:commons-io:2.5'
+    //compile("org.apache.camel:camel-spring-security:${camelVersion}")
+    //compile("org.apache.camel:camel-jetty:${camelVersion}")
+    compile 'org.subethamail:subethasmtp:3.1.7'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
